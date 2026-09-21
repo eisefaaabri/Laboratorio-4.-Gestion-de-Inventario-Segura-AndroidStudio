@@ -39,7 +39,7 @@ fun main() {
     println(report)
 
     // --- Desafío 2: El Validador de Precios Dinámico ---
-    val inputUsuario: String? = "650.50" // Prueba 1: "650.50" | Prueba 2: "No quiero pagar"
+    val inputUsuario: String? = "No quiero pagar" // Prueba 1: "650.50" | Prueba 2: "No quiero pagar"
 
     // Conversión Segura y Lógica de Respaldo (Elvis Operator)
     // Intenta convertir a Double; si falla (devuelve null), el operador ?: asigna 0.0
