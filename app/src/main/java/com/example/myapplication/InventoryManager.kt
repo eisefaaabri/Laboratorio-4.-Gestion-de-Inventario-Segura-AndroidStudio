@@ -7,6 +7,7 @@ fun main() {
     var productDescription: String? = null // ? permite que sea nulo
     var stockQuantity: Int = 25 // Cantidad mutable (cambia con ventas)
     val unitPrice: Double = 599.99 // Precio base inmutable.
+
     // El compilador de Java 21/Kotlin 2.0 gestiona aquí la memoria eficientemente.
     println("--- Datos Iniciales Cargados ---")
 
@@ -36,5 +37,20 @@ fun main() {
          -----------------------------
     """.trimIndent()
     println(report)
+
+    // --- Desafío 2: El Validador de Precios Dinámico ---
+    val inputUsuario: String? = "650.50" // Prueba 1: "650.50" | Prueba 2: "No quiero pagar"
+
+    // Conversión Segura y Lógica de Respaldo (Elvis Operator)
+    // Intenta convertir a Double; si falla (devuelve null), el operador ?: asigna 0.0
+    val precioUnitario: Double = inputUsuario?.toDoubleOrNull() ?: 0.0
+
+    // Recalcular el precio total
+    val precioTotalConTax = precioUnitario * (1 + TAX_RATE)
+
+    println("\n--- SIMULACIÓN DE ENTRADA DINÁMICA ---")
+    println("Texto ingresado: $inputUsuario")
+    println("Precio base validado: $$precioUnitario")
+    println("Nuevo Precio Final (con IVA): $$precioTotalConTax")
 
 }
